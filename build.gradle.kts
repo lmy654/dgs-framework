@@ -141,6 +141,7 @@ configure(subprojects.filterNot { it in internalBomModules }) {
     publishing {
         publications {
             create<MavenPublication>("maven") {
+                version = "3.10.2"
                 from(components["java"])
             }
         }

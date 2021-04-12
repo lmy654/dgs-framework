@@ -66,6 +66,7 @@ configure(subprojects.filterNot { it in internalBomModules }) {
         plugin("kotlin")
         plugin("kotlin-kapt")
         plugin("org.jlleitschuh.gradle.ktlint")
+        plugin("maven-publish")
     }
 
     /**
@@ -135,5 +136,23 @@ configure(subprojects.filterNot { it in internalBomModules }) {
 
     configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
         disabledRules.set(setOf("no-wildcard-imports"))
+    }
+
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                from(components["java"])
+            }
+        }
+
+        repositories {
+            maven {
+                url = uri("http://index.tv.sohuno.com/nexus/content/repositories/snapshots")
+                credentials {
+                    username = "admin"
+                    password = "admin123"
+                }
+            }
+        }
     }
 }

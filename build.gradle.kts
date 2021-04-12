@@ -141,14 +141,14 @@ configure(subprojects.filterNot { it in internalBomModules }) {
     publishing {
         publications {
             create<MavenPublication>("maven") {
-                version = "3.10.2"
+                version = "3.10.2-sohu"
                 from(components["java"])
             }
         }
 
         repositories {
             maven {
-                url = uri("http://index.tv.sohuno.com/nexus/content/repositories/snapshots")
+                url = uri("http://index.tv.sohuno.com/nexus/content/repositories/releases")
                 credentials {
                     username = "admin"
                     password = "admin123"

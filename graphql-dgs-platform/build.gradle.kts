@@ -22,7 +22,7 @@ plugins {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            version = "3.10.2-sohu"
+            version = "4.0.1-sohu"
             from(components["javaPlatform"])
         }
     }

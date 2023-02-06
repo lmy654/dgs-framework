@@ -30,7 +30,7 @@ plugins {
     id("nebula.dependency-recommender") version "11.0.0"
     id("org.jmailen.kotlinter") version "3.6.0"
     kotlin("jvm") version Versions.KOTLIN_VERSION
-    kotlin("kapt") version Versions.KOTLIN_VERSION
+    kotlin("kapt") version 1.8.10
     idea
     eclipse
 }
